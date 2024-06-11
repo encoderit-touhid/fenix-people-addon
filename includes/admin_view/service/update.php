@@ -69,10 +69,13 @@ input.buttons {
     <br>
     <br>
     <label for="">Status:</label>
-    <select name="service_active" id="service_active">
-      <option value="1" <?=$result->is_active == 1 ? 'selected' :'' ?>>Active</option>
-      <option value="0" <?=$result->is_active == 0 ? 'selected' :'' ?>>Inactive</option>
-      </select>
+       <div class="flex">
+        <p><input type="radio" name="service_active" value="1" <?=$result->is_active == 1 ? 'checked' :'' ?>> Active</p>
+        <p style="margin-left: 10px;"><input type="radio" name="service_active" value="0" <?=$result->is_active == 0 ? 'checked' :'' ?>> Inactive</p>
+        
+        
+       </div>
+     
     <br>
     <br>
     <button id="add_service" class="button" >Update Service</button>
@@ -89,7 +92,7 @@ input.buttons {
       var service_price=jQuery('#service_price').val();
       var service_name=jQuery('#service_name').val();
       var service_id=<?php echo $result->id?>;
-      var service_active=jQuery('#service_active').val();
+      var service_active=jQuery('input[name="service_active"]:checked').val();;
 
       formdata.append('service_name',service_name);
       formdata.append('service_price',service_price);

@@ -235,7 +235,7 @@ class fenix_people_admin_functionalities
         
         $view_service_request_link=site_url() .'/my-account/submitted-service-request-single-view?form_id='.enc_encodeContent($search_data.';'.$result->user_id); ;
 
-		$message = '<p>Admin Upload Files to Your Case Please Collect them </p>';
+		$message = '<p>Admin Upload Files to Your Service Request Please Collect them </p>';
         
         $message .= '<p>To view Message click below</p>';
         $message .= '<a href="'.$view_service_request_link.'">Click Here</a>';

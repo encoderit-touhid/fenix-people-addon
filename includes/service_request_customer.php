@@ -222,7 +222,7 @@ class service_request_customer
     {
         $to = get_option('admin_email');
 
-		$subject = 'New Case Form Submission ' . ' (' . wp_get_current_user()->display_name . ')';
+		$subject = 'New Service Request Form Submission ' . ' (' . wp_get_current_user()->display_name . ')';
 
 		$message = '<p> Contact Name: ' . wp_get_current_user()->display_name . '</p>';
         
@@ -244,7 +244,7 @@ class service_request_customer
     {
         $to = wp_get_current_user()->user_email;
 
-		$subject = 'New Case Form Submission ' . ' (' . wp_get_current_user()->display_name . ')';
+		$subject = 'New Service Request Form Submission ' . ' (' . wp_get_current_user()->display_name . ')';
 
 		$message = '<p> Contact Name: ' . wp_get_current_user()->display_name . '</p>';
 //        $message = '<p> Customer country: '.$_POST['select_country'].'</p>';

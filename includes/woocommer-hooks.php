@@ -149,3 +149,44 @@ add_action( 'woocommerce_account_submitted-service-request_endpoint', 'submitted
     // return $items;
 }
 add_filter( 'woocommerce_account_menu_items', 'custom_my_account_menu_items_send_user_message', );
+
+
+
+
+ /*** Membership response */
+
+ 
+
+ add_action( 'init', 'user_membership_add_endpont' );
+ function user_membership_add_endpont() {
+    
+     // Check WP_Rewrite
+     add_rewrite_endpoint( 'user-membership', EP_PAGES );
+  
+ }
+ /*
+  * Step 3. Content for the new page in My Account, woocommerce_account_{ENDPOINT NAME}_endpoint
+  */
+ add_action( 'woocommerce_account_user-membership_endpoint', 'woocommerce_account_user_membership_endpoint' );
+ function woocommerce_account_user_membership_endpoint() {
+  
+     // Content for new page
+     echo do_shortcode('[arm_setup id="1"]');
+ 
+  
+ }
+ function custom_my_account_menu_items_user_membership( $items ) {
+   $new_items = array();
+   // Loop throu menu items
+   foreach( $items as $key => $item ){
+       if( 'orders' == $key )
+           $new_items['user-membership'] = __( 'Membership', 'woocommerce');
+
+       $new_items[$key] = $item;
+   }
+   return $new_items;
+
+   // $items['submitted-service-request'] = __( 'Submitted Service Request', 'woocommerce');
+   // return $items;
+}
+add_filter( 'woocommerce_account_menu_items', 'custom_my_account_menu_items_user_membership', );

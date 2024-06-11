@@ -74,7 +74,7 @@ class EncoderITCustomForm extends WP_List_Table
             "SL No." => "SL No.",
             "Service Name" => "Service Name",
             "Service Price" => "Service Price",
-            "Subscription Details" => "Subscription Details",
+            //"Subscription Details" => "Subscription Details",
             "Updated At" =>"Updated At",
             'Action'  => 'Action',
             //'Cancel'  => 'Cancel'
@@ -176,7 +176,7 @@ class EncoderITCustomForm extends WP_List_Table
             case "SL No.":
             case "Service Name":
             case "Service Price":
-            case "Subscription Details":    
+            //case "Subscription Details":    
             case "Updated At":
             case 'Action':
            // case 'Cancel':    
